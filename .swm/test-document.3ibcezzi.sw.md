@@ -15,20 +15,20 @@ app_version: 1.13.12
 <!-- NOTE-swimm-snippet: the lines below link your snippet to Swimm -->
 ### 📄 components/pages/Feed.jsx
 ```javascript
-21     const FeedCard = ({ id, title, type, text, author, authorAvatar, image }) => (
-22       <Card className="mx-auto my-4" href={`/stories/${id}`}>
-23         <div className="relative w-full" style={{ height: '50vh' }}>
-24           <Image className="rounded-t-xl" objectFit="cover" src={image} alt="" layout="fill" />
+21     const FeedCard = ({ title, type, text, author, authorAvatar, image }) => (
+22       <Card className="my-4 mx-auto">
+23         <div className="h-32 w-full relative">
+24           <img className="rounded-t-xl object-cover min-w-full min-h-full max-w-full max-h-full" src={image} alt="" />
 25         </div>
 26         <div className="px-4 py-4 bg-white rounded-b-xl dark:bg-gray-900">
-27           <h4 className="py-0 font-bold text-gray-400 uppercase text-s dark:text-gray-500">{type}</h4>
-28           <h2 className="text-2xl font-bold text-gray-800 dark:text-gray-100">{title}</h2>
-29           <p className="my-3 mr-1 text-gray-500 sm:text-sm text-s dark:text-gray-400">{text}</p>
+27           <h4 className="font-bold py-0 text-s text-gray-400 dark:text-gray-500 uppercase">{type}</h4>
+28           <h2 className="font-bold text-2xl text-gray-800 dark:text-gray-100">{title}</h2>
+29           <p className="sm:text-sm text-s text-gray-500 mr-1 my-3 dark:text-gray-400">{text}</p>
 30           <div className="flex items-center space-x-4">
-31             <div className="relative w-10 h-10">
-32               <Image layout="fill" src={authorAvatar} className="rounded-full" alt="" />
+31             <div className="w-10 h-10 relative">
+32               <img src={authorAvatar} className="rounded-full object-cover min-w-full min-h-full max-w-full max-h-full" alt="" />
 33             </div>
-34             <h3 className="text-sm font-medium text-gray-500 dark:text-gray-200 m-l-8">{author}</h3>
+34             <h3 className="text-gray-500 dark:text-gray-200 m-l-8 text-sm font-medium">{author}</h3>
 35           </div>
 36         </div>
 37       </Card>
