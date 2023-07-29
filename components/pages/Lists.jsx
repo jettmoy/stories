@@ -9,6 +9,7 @@ import {
   IonContent,
   IonItem,
   IonLabel,
+  IonList,
 } from '@ionic/react';
 
 const ListEntry = ({ list, ...props }) => (
@@ -32,18 +33,20 @@ const AllLists = ({ onSelect }) => {
 const Lists = () => {
   return (
     <IonPage>
-      <IonHeader>
+      <IonHeader translucent={true}>
         <IonToolbar>
           <IonTitle>Lists</IonTitle>
         </IonToolbar>
       </IonHeader>
-      <IonContent fullscreen>
+      <IonContent fullscreen={true}>
         <IonHeader collapse="condense">
           <IonToolbar>
             <IonTitle size="large">Lists</IonTitle>
           </IonToolbar>
         </IonHeader>
-        <AllLists />
+        <IonList>
+          <AllLists />
+        </IonList>
       </IonContent>
     </IonPage>
   );

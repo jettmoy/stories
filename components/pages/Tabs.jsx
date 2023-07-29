@@ -12,10 +12,10 @@ const Tabs = () => {
   return (
     <IonTabs>
       <IonRouterOutlet>
-        <Route path="/tabs/feed" component={Home} exact={true} />
-        <Route path="/tabs/lists" component={Lists} exact={true} />
-        <Route path="/tabs/lists/:listId" component={ListDetail} exact={true} />
-        <Route path="/tabs/settings" component={Settings} exact={true} />
+        <Route path="/tabs/feed" render={() => <Home />} exact={true} />
+        <Route path="/tabs/lists" render={() => <Lists />} exact={true} />
+        <Route path="/tabs/lists/:listId" render={() => <ListDetail />} exact={true} />
+        <Route path="/tabs/settings" render={() => <Settings />} exact={true} />
         <Route path="/tabs" render={() => <Redirect to="/tabs/feed" />} exact={true} />
       </IonRouterOutlet>
       <IonTabBar slot="bottom">

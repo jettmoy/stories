@@ -8,8 +8,6 @@ Next.js handles the production React app experience, Tailwind can be used to sty
 
 See this blog post for an overview of the stack and how it all works: https://dev.to/ionic/build-mobile-apps-with-tailwind-css-next-js-ionic-framework-and-capacitor-3kij
 
-Please note: this repo isn't quite production ready as-is. Users will want to configure tailwind purging as a first step, and note SSR is currently disabled for the Next.js app as the app will be fully client-side rendered for iOS and Android. This is a limitation we are working to address in a future update.
-
 ## Usage
 
 This project is a standard Next.js app, so the typical Next.js development process applies (`npm run dev` for browser-based development). However, there is one caveat: the app must be exported to deploy to iOS and Android, since it must run purely client-side. ([more on Next.js export](https://nextjs.org/docs/advanced-features/static-html-export))
@@ -47,6 +45,10 @@ To enable Livereload and Instant Refresh during development (when running `npm r
 ```
 
 Note: this configuration wil be easier in Capacitor 3 which [recently went into beta](https://capacitorjs.com/blog/announcing-capacitor-3-0-beta).
+
+## API Routes
+
+API Routes can be used but some minimal configuration is required. See [this discussion](https://github.com/mlynch/nextjs-tailwind-ionic-capacitor-starter/issues/4#issuecomment-754030049) for more information.
 
 ## Caveats
 

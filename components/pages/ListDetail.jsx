@@ -11,6 +11,7 @@ import {
   IonTitle,
   IonToolbar,
 } from '@ionic/react';
+import { useParams } from 'react-router-dom';
 
 import Store from '../../store';
 import * as actions from '../../store/actions';
@@ -35,9 +36,8 @@ const ListItemEntry = ({ list, item }) => (
 
 const ListDetail = ({ match }) => {
   const lists = Store.useState(selectors.getLists);
-  const {
-    params: { listId },
-  } = match;
+  const params = useParams();
+  const { listId } = params;
   const loadedList = lists.find(l => l.id === listId);
 
   return (
@@ -50,12 +50,7 @@ const ListDetail = ({ match }) => {
           <IonTitle>{loadedList.name}</IonTitle>
         </IonToolbar>
       </IonHeader>
-      <IonContent fullscreen>
-        <IonHeader collapse="condense">
-          <IonToolbar>
-            <IonTitle size="large">{loadedList.name}</IonTitle>
-          </IonToolbar>
-        </IonHeader>
+      <IonContent>
         <ListItems list={loadedList} />
       </IonContent>
     </IonPage>
